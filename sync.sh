@@ -38,6 +38,8 @@ done
 
 MIRROR="$(cd "$(dirname "$0")" && pwd)"
 ROOT="$(dirname "$MIRROR")"
+# Files that belong to the mirror repo itself; everything else is regenerated each run.
+MIRROR_OWN="README.md mirror.conf sync.ps1 sync.sh restore.ps1 restore.sh .gitignore .gitattributes"
 WORK="$(mktemp -d)"; trap 'rm -rf "$WORK"' EXIT
 LIST="$WORK/list"; : > "$LIST"
 
@@ -168,7 +170,12 @@ if [ -n "$PREV" ] && ! git merge-base --is-ancestor "$PREV" "$BASE"; then
 fi
 git checkout -q -b "$BRANCH" "$START"
 
-# Replace each scope in the mirror with a fresh copy (handles deletes/renames).
+# Rebuild the mirror from scratch: remove every tracked file except the mirror's own
+# (so files that left the scope or were deleted at the source drop out), then copy.
+git -c core.quotepath=off ls-files > "$WORK/tracked"
+while IFS= read -r t; do
+  if ! in_list "$t" "$MIRROR_OWN"; then rm -f "${MIRROR:?}/$t"; fi
+done < "$WORK/tracked"
 while IFS= read -r s; do rm -rf "${MIRROR:?}/$s"; done < "$WORK/targets"
 while IFS= read -r rel; do
   mkdir -p "$MIRROR/$(dirname "$rel")"
