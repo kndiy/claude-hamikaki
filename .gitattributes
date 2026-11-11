@@ -1,0 +1,2 @@
+# Store files byte-for-byte as they are in the projects tree (no CRLF/LF conversion).
+* -text

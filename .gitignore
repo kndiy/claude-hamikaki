@@ -1,0 +1,23 @@
+# Second line of defence: the sync scripts already copy text files only.
+*.docx
+*.doc
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.pptx
+*.pdf
+*.zip
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.mp4
+*.crt
+*.pem
+*.key
+*.pfx
+*Zone.Identifier
+settings.local.json
+.restore-backup/
