@@ -1,0 +1,9 @@
+{
+    "root":  "..",
+    "subRoots":  [
+                     "codes",
+                     "noncodes"
+                 ],
+    "wslDistro":  "Ubuntu",
+    "wslRoot":  "~/projects"
+}

@@ -51,6 +51,11 @@ $SecretPatterns = @(
 
 $Mirror = $PSScriptRoot
 $Root = Split-Path -Parent $Mirror
+# Files that belong to the mirror repo itself; everything else is regenerated each run.
+$MirrorOwn = @("README.md", "mirror.conf", "sync.ps1", "sync.sh", "restore.ps1", "restore.sh", ".gitignore", ".gitattributes")
+$Utf8 = New-Object System.Text.UTF8Encoding($false)
+$OutputEncoding = $Utf8
+[Console]::OutputEncoding = $Utf8
 
 # mirror.conf sections, one item per line ('#' starts a comment):
 #   [claude]   folders: only their Claude files (+ helper scripts, see [scripts])
@@ -193,7 +198,15 @@ try {
     Invoke-Git checkout -q -b $Branch $start
 } finally { Pop-Location }
 
-# Replace each scope in the mirror with a fresh copy (handles deletes/renames).
+# Rebuild the mirror from scratch: remove every tracked file except the mirror's own
+# (so files that left the scope or were deleted at the source drop out), then copy.
+Push-Location $Mirror
+try { $tracked = @(git -c core.quotepath=off ls-files) } finally { Pop-Location }
+foreach ($t in $tracked) {
+    if ($MirrorOwn -contains $t) { continue }
+    $tp = ConvertTo-LongPath (Join-Path $Mirror ($t.Replace("/", "\")))
+    if ([IO.File]::Exists($tp)) { [IO.File]::Delete($tp) }
+}
 foreach ($s in ($AllScopes + $RootFiles)) {
     $target = [IO.Path]::GetFullPath((Join-Path $Mirror ($s.Replace("/", "\"))))
     if (-not $target.StartsWith($Mirror + "\")) { throw "Refusing to delete outside mirror: $target" }
