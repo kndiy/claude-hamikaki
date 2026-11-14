@@ -97,10 +97,10 @@ These are the tools Claude Code relies on. Any `CLAUDE.md` in the tree (root, su
 | Tool | Check | Level | Install | Status |
 |---|---|---|---|---|
 | curl | `curl --version` | required | `sudo apt-get update && sudo apt-get install -y curl` | 8.18.0 |
-| Claude Code | `claude --version` | required | `curl -fsSL https://claude.ai/install.sh \| bash` | 2.1.318 |
+| Claude Code | `claude --version` | required | `curl -fsSL https://claude.ai/install.sh \| bash` | 2.1.325 |
 | Git | `git --version` | recommended | `sudo apt-get update && sudo apt-get install -y git` | 2.53.0 |
 | Python | `python3 --version` | recommended | `sudo apt-get update && sudo apt-get install -y python3 python3-pip python3-venv` | 3.14.4 |
-| Java (JDK 21) | `java -version` | recommended | `sudo apt-get update && sudo apt-get install -y openjdk-21-jdk` | 21.0.12.1 |
+| Java (JDK 21) | `java -version` | recommended | `sudo apt-get update && sudo apt-get install -y openjdk-21-jdk` | 21.0.13.0.3 |
 | Maven | `mvn -version` | recommended | `sudo apt-get update && sudo apt-get install -y maven` | 3.9.12 |
 <!-- launcher:tools:linux:end -->
 
