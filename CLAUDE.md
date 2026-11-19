@@ -57,7 +57,7 @@ These rules apply to every project and session.
       - Then run it for real.
       - On conflicts (local edits that aren't on `main`), stop and ask. Usually the fix is to sync first. Use `-Force` only with the user's explicit OK, and point them to the backups in `_claude-<name>/.restore-backup/`.
     - Suggest restoring at the start of work and syncing at the end.
-    - On Windows, the scripts set git's `core.sshCommand` to the Windows OpenSSH client, so the passphrase key in the Windows ssh-agent works. That key (account `khiemnd-rnd4u`, a collaborator on `kndiy/claude-hamikaki`) reaches both repos. A push needs no extra setup.
+    - On Windows, the scripts set git's `core.sshCommand` to the Windows OpenSSH client, so the passphrase key in the Windows ssh-agent works. Key split: `~/.ssh/kndiy_ed25519` (account `khiemnd-rnd4u`) is the **company** key, for company work, which now lives almost entirely under `codes/pricefx` (including `rnd4u/claude-rnd4u`). `~/.ssh/hamikaki_ed25519` (account `kndiy`) is the **private/family** key, for `kndiy/claude-hamikaki` only. On Linux/WSL, `_claude-hamikaki` has a per-repo `core.sshCommand` selecting the hamikaki key (a plain `github.com` URL would offer the company key). Never push hamikaki content with the company key or the reverse.
     - **Changing a script:** edit it in one mirror, then copy it unchanged to the other one. Only `mirror.conf` may differ.
   - Details (options, `mirror.conf` format, the new-machine steps): `_claude-rnd4u/README.md`, the same file in both mirrors.
 
@@ -97,7 +97,7 @@ These are the tools Claude Code relies on. Any `CLAUDE.md` in the tree (root, su
 | Tool | Check | Level | Install | Status |
 |---|---|---|---|---|
 | curl | `curl --version` | required | `sudo apt-get update && sudo apt-get install -y curl` | 8.18.0 |
-| Claude Code | `claude --version` | required | `curl -fsSL https://claude.ai/install.sh \| bash` | 2.1.325 |
+| Claude Code | `claude --version` | required | `curl -fsSL https://claude.ai/install.sh \| bash` | 2.1.327 |
 | Git | `git --version` | recommended | `sudo apt-get update && sudo apt-get install -y git` | 2.53.0 |
 | Python | `python3 --version` | recommended | `sudo apt-get update && sudo apt-get install -y python3 python3-pip python3-venv` | 3.14.4 |
 | Java (JDK 21) | `java -version` | recommended | `sudo apt-get update && sudo apt-get install -y openjdk-21-jdk` | 21.0.13.0.3 |
