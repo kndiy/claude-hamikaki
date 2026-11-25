@@ -22,7 +22,7 @@ There are two mirror repos. They use **the same scripts and this same README**. 
 | `[scripts]` | Helper-script extensions (e.g. `py ps1 sh groovy`) also mirrored inside `[claude]` folders, but **only outside nested git repos**. Code in a git repo is already backed up by that repo. |
 | `[whole]` | Folders where every text file is mirrored (e.g. `_launcher`). |
 | `[files]` | Single files at the projects root (e.g. `CLAUDE.md`, `Launch.cmd`). |
-| `[exclude]` | Folders skipped entirely (e.g. `codes/pricefx` in hamikaki). |
+| `[exclude]` | Folders or single files skipped entirely (e.g. `codes/pricefx` in hamikaki, raw customer data files in rnd4u). |
 
 Fixed rules, the same in every mirror:
 

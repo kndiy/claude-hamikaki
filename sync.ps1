@@ -61,7 +61,7 @@ $OutputEncoding = $Utf8
 #   [claude]   folders: only their Claude files (+ helper scripts, see [scripts])
 #   [whole]    folders: every text file
 #   [files]    single files at the projects root
-#   [exclude]  folders skipped entirely
+#   [exclude]  folders or single files skipped entirely
 #   [scripts]  extensions of helper scripts to include inside [claude] folders,
 #              but only outside nested git repos (code in a repo is already in git)
 $Conf = @{ claude = @(); whole = @(); files = @(); exclude = @(); scripts = @() }
@@ -114,6 +114,7 @@ function Walk([string]$dir, [string]$mode, [bool]$inRepo) {
     foreach ($f in [IO.Directory]::EnumerateFiles((ConvertTo-LongPath $dir))) {
         $name = [IO.Path]::GetFileName($f)
         $rel = $f.Substring(4).Substring($Root.Length + 1).Replace("\", "/")
+        if (Test-Excluded $rel) { continue }
         if (Test-Wanted $rel $name $mode $inRepo) {
             $len = (New-Object IO.FileInfo($f)).Length
             if ($len -gt $MaxBytes) { $skippedBig.Add($rel) } else { $found.Add(@{ Src = $f; Rel = $rel }) }
