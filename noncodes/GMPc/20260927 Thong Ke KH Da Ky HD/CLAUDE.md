@@ -81,12 +81,9 @@ Launcher (`_launcher`) kiểm tra bảng này khi mở project và đề nghị 
 7. Có dùng thêm file `2600813 Danh sách KH đã kí HĐ 2023-2024-2025.xlsx` và file OKS trên NAS để đối chiếu không?
 
 ## Changelog
-- 2026-09-27: Tạo project, copy file mẫu từ NAS, profile sheet `Tổng hợp`.
-- 2026-09-27: Cài Python 3.13.15 + pandas, openpyxl.
-- 2026-09-27: Chuyển project từ `OneDrive\Documents\Projects` sang local `Documents\Projects`.
-- 2026-09-27: User xác nhận phạm vi: đối chiếu scan HĐ (đọc từ NAS), output Excel, thiếu thì để trống.
-- 2026-09-27: Cài pymupdf, pypdf. Đọc 135 HĐ scan (lớp OCR có sẵn lỗi dấu → đọc từ ảnh trang), lưu `scan_extract.jsonl`.
-- 2026-09-27: Viết `02_build_report.py`, xuất báo cáo `output/260927 Thong ke KH da ky HD 2011-2026.xlsx`.
+
+Older entries: `zClaudeDocs/CLAUDE_CHANGELOG.md`.
+
 - 2026-09-27: Thêm `requirements.txt` và hướng dẫn cài đặt công cụ vào CLAUDE.md.
 - 2026-09-27: Chuyển project vào `projects\noncodes\` (root đổi tên thành chữ thường; cấu trúc root > subRoot > project mới), thêm file đánh dấu `.claude-project`. Script dùng đường dẫn tương đối nên không cần sửa.
 - 2026-09-27: Chuyển project từ `C:\Users\Khiem Nguyen\Documents\projects\noncodes\20260927 Thong Ke Khach Hang Da Ky Hop Dong` vào group `noncodes\GMPc\20260927 Thong Ke KH Da Ky HD` (robocopy, bỏ `__pycache__`). Sửa dòng "Vị trí"; check công cụ đổi `fitz` → `pymupdf` (tránh cảnh báo deprecated). Giữ nguyên `SCAN_ROOT` trên `L:\` (chỉ đọc). Kiểm tra: 142 file khớp hash; chạy lại `02_build_report.py` cho kết quả giống hệt bản cũ (401 dòng, 126 khớp, 6 chỉ có trong scan, 29 lệch; nội dung các sheet trùng khớp).
