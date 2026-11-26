@@ -136,20 +136,9 @@ Add rows for tools this project needs; the launcher checks them when the project
 - Recommendation unchanged: no live trading; forward paper test is the next real evidence.
 
 ## Change log
-- 2026-11-16: Saved progress and the discussion on static vs adaptive methods (see Status at pause).
-- 2026-11-16: Owner agreed all three proposals ("ok, all 3"): Dukascopy as source (owner checks terms), the testing protocol and accept rule, the indicator order. Added `accept.py` (the gate) and `stoch.py` (ch. 5 50-line system), compiled ch. 5 into the notes; all four methods tested so far are rejected. 29 tests pass.
-- 2026-11-16: Project created.
-- 2026-11-16: Recorded the first decisions (MQL5 EA, demo only, single pair) and the open questions. No code yet.
-- 2026-11-16: Owner asked to implement all indicators, build a CSV data warehouse and test on demo. Built the warehouse (catalog, validation, merge/update), migrated the 4 pairs, added the run registry; validation found data gaps/stale bars (see protocol section). 25 tests pass.
-- 2026-11-16: Per-year EURUSD breakdown (`run_years.py`); checked why 2017 lost (add-ons chop big trends); 2018 direction matches the owner's gain, 2023 loss is far larger than the rules explain.
-- 2026-11-16: Built the Chapter 10 combination (independent / all agree / majority) and ran it: no better than the best single method. Owner trades EURUSD mainly.
-- 2026-11-16: Added `run_periods.py` and ran the owner's windows (2017-2019, 2023-now): no method shows an edge; 2023-now is worse for all.
-- 2026-11-16: Built Trend Analysis (`trend.py`, `run_trend.py`) and ran four pairs: book version PF 0.75-1.03. Recorded the owner's trading history (trend gain around 2018, Conqueror loss from 2023).
-- 2026-11-16: Verified the Conqueror and channel code against the book's Oct 2008 GBP examples (matches within data differences); July 2007 Rejection Rule example not matched. No bug found.
-- 2026-11-16: Built the 55/20 channel breakout with ADX filter, Bishop, Rejection Rule, Last Bar stop (15 tests pass); ran EURUSD, GBPUSD, AUDUSD, NZDUSD. Owner: always follow the book for now, improve later with more data. Book-faithful version loses on all four pairs; see Channel breakout findings.
-- 2026-11-16: Read ch. 7, rest of ch. 10 and Epilogue into `notes/indicators.md`. Added ADX and the Bishop exit to the backtester (`--bishop`, `--adx-len`; owner decided it applies to the Conqueror), default risk 0.5%. 11 tests pass.
-- 2026-11-16: Owner: follow the book all the way; his cut/flip/lookback memory is consistent with the book. Book rules are the spec; variants withdrawn. Added a unit test pinning the tightening arithmetic.
-- 2026-11-16: Owner said he traded the table with manual cuts and wants an automatic bot. Added `--tighten exit2|exit2_events` variants and backtested them (no better than the book's rule). Recommended not going live until a rule set shows an edge.
+
+Older entries: `zClaudeDocs/CLAUDE_CHANGELOG.md`.
+
 - 2026-11-16: Compiled ch. 2-4 indicators into `notes/indicators.md` (swing/trend analysis, ADX filter, Bishop, channel breakout 55/20 with rejection rule and last bar, Conqueror). Owner asked to slow down: compile first, combine later.
 - 2026-11-16: Added the Python backtester (strategy, fetcher, CLI, 7 tests, all pass). First result on EURUSD daily: profit factor below 1 under all three readings of the tightening rule. See Backtest findings.
 - 2026-11-16: Added the Conqueror rules from Chapter 4, the risk-layer requirements, the Vietnam/IG constraint, and updated the open questions. No code yet.

@@ -35,8 +35,9 @@ Add rows for tools this project needs; the launcher checks them when the project
 <!-- launcher:tools:linux:end -->
 
 ## Change log
-- 2026-10-30: Project created (as epub_to_word).
-- 2026-10-30: Renamed group epub_manipulation to kindle_book_management, merged epub_to_word into it; kindle_book_management is now the project.
+
+Older entries: `zClaudeDocs/CLAUDE_CHANGELOG.md`.
+
 - 2026-10-30: Added `korean_book/Saenal_Overgeared/` (Overgeared docx, epub, edited cover).
 - 2026-10-30: Fixed `epub-to-docx` SKILL.md frontmatter (stray `# kindle_book_management` line replaced by opening `---`) so the description loads.
 - 2026-10-30: Copied Groovy epub converter + Template.docx from kndiy-tools, added runner script and `epub-to-docx` skill.

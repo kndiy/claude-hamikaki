@@ -29,8 +29,9 @@ None.
 - The photos show a small red mark on the exhaust end cap. Unknown whether it is paint from the other bike, an old mark, or the bike's own colour. Ask the user; don't state it as paint transfer.
 
 ## Change log
-- 2026-10-26: Copied the two damage photos (`Po 1.jpg`, `Po 2.jpg`) from `E:\pictures\` into `evidence/` and described them in `Tuong trinh.md`. Originals left in place.
-- 2026-10-26: The user clarified that only one bang was heard and they don't know whether the other rider fell. All points that differed between the two accounts are now settled.
+
+Older entries: `zClaudeDocs/CLAUDE_CHANGELOG.md`.
+
 - 2026-10-26: Clarified that the other bike came from behind and nobody was seen on the right; "overtaking on the right" removed as fact and kept only as the user's guess. One point left to confirm (hearing the rider fall).
 - 2026-10-26: Added the location (Hoàng Hoa Thám flyover foot at Cộng Hòa, turn into A4) and replaced the short sequence with the user's detailed 7-step account. Flagged two differences from the first account (overtaking on the right, hearing the rider fall) for the user to confirm.
 - 2026-10-26: Created as a plain folder in `noncodes/` (`20261026 Quet Xe`), then moved to `noncodes/accidents/20261026 quet xe` (lower case) and turned into a project (`.claude-project` + this file). `accidents/` is a group.

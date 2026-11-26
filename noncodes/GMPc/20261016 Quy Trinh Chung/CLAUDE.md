@@ -42,19 +42,9 @@ PYTHONIOENCODING=utf-8 python scripts/hd01.py      # or hd02.py / hd03.py
 - HD-01/HD-02 could get the same treatment (HD-02 header code, "SOP" subtitle → "HƯỚNG DẪN"). Not asked for yet.
 
 ## Change log
-- 2026-10-16: The user chose **option 1** for HD-01…03: rebuild on the QĐ-01 frame without changing content. Outputs are in `output/GMPc-HD-0x …docx` (4 pages each, checked as PDF). The source files were not touched.
-  - Layout: header on every page, subtitle "HƯỚNG DẪN", codes HD-01/02/03, effective date and history date blank (`__/__/____`) until signed, steps in title-row plus content-row style, Calibri footer. HD-01 keeps its own flowchart image.
-  - Wording fixes only: "Quy trình này" → "Hướng dẫn này"; IT & GWS / Nhân viên IT / IT Admin / nhóm IT → Bộ phận IT; Hành chính nhân sự / Bộ phận HCNS → Phòng HCNS; phom mẫu → biểu mẫu; Wework → WeWork; stray "/ /"; "có thế mạnh mạnh mẽ" → "có thế mạnh"; "trí tuệ nhân tạo lớn" → "ngôn ngữ lớn"; "xử lý ngôn ngữ tự nhiên logic" → "…tự nhiên, lập luận logic"; click/reset/copy/link → bấm/đặt lại mật khẩu/sao chép/đường liên kết. The empty definition rows were dropped.
-  - Not changed (review points): account deletion, SLA figure, "Xin nghỉ phép", the HD-03 security items, and "Tổng giám đốc" vs QĐ-01's "CEO".
-- 2026-10-16: Reviewed HD-01 (re-saved by the user at 10:47), HD-02 and the new upload HD-03 (read-only; each is 4 pages). Notes are in `docs/2026-10-16_Nhan-xet_HD-01-03.md`. Main points:
-  - The header shows on page 1 only.
-  - The subtitle still says "SOP".
-  - HD-02 and HD-03 have no code.
-  - The effective dates are filled in although the documents aren't signed.
-  - HD-01: the account deletion step doesn't transfer data first. (The gmpc.vn flag was withdrawn: the user confirmed on 2026-10-16 that **gmpc.vn** is the official email domain.)
-  - HD-02: SLA has no figure, and the "Xin nghỉ phép" example contradicts QĐ-01 Điều 3.
-  - HD-03: customer data is missing from the list of things banned from AI; turning off data training is optional; it uses shared licence accounts.
-  - QĐ-01: the user had filled the sign-off in Word (drafter Chuyên viên HCNS / Trần Thị Thanh Thảo, reviewer Trưởng phòng CS / Ngô Thị Hồng Thắm, approver CEO / Đào Xuân Hưởng). That is now synced into `qd01.py` (`SIGN`). Rebuilt with `--force` (a backup of the user's file is in the session scratchpad). The text is identical to the user's file, and the footer is now Calibri.
+
+Older entries: `zClaudeDocs/CLAUDE_CHANGELOG.md`.
+
 - 2026-10-16: Built **GMPc-QĐ-01 Nội quy lao động** (8 pages, checked as PDF). User decisions: Calibri for internal documents (Nunito for customers; recorded in the group CLAUDE.md), the BM01 cross logo is the new logo, and the BM01 frame is used for QĐ documents.
   - Layout: header with subtitle "QUY ĐỊNH", code GMPc-QĐ-01 and title "NỘI QUY LAO ĐỘNG"; the sign-off table; the Quyết định ban hành on page 1, with a standard two-column heading and a blank "Số: ……/QĐ-GMPc"; an automatic TOC; Chương as Heading1 and Điều as Heading2; then Lịch sử ban hành and Lưu tài liệu. The SOP-only sections were removed. The footer font was changed from Times New Roman to Calibri.
   - Text changes are limited to spelling, case and consistency. Examples: Neu/họp/trường họp/máy baytrong/mocrofiche/Calender/kí; GMPC → GMPc; CBCNV → CBNV; PHC/P.HC/Phòng HC/Phòng nhân sự → Phòng HCNS; "Bên B" and NSDLĐ → NLĐ / Công ty; "Luật Lao Động" → Bộ luật Lao động; "Chương 4, mục 4" → Điều 10, Chương III; -/+/=> → bullets, sub-items and a bold line. No rule was changed.

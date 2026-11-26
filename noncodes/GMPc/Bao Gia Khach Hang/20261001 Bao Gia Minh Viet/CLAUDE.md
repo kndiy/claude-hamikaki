@@ -61,10 +61,9 @@ Add rows for tools this project needs; the launcher checks them when the project
 <!-- launcher:tools:windows:end -->
 
 ## Change log
-- 2026-10-01: Project created.
-- 2026-10-01: Copied source files to data/raw and built draft v1 (fixed the addresses, date and VAT decree, aligned the EN payment terms, added a review sheet).
-- 2026-10-01: Draft v2: added sections II and III from Cafune, bilingual with Cafune ENG terminology, multi-stage terms, Calibri Light throughout.
-- 2026-10-01: Moved the font and GMPc-address rules up to the GMPc group CLAUDE.md.
+
+Older entries: `zClaudeDocs/CLAUDE_CHANGELOG.md`.
+
 - 2026-10-01: Draft v3: customer address and English name, phone/email rows hidden, logo and stamp/signature restored (they were lost in v1/v2 because Pillow was missing), Pillow added to tools.
 - 2026-10-14: Contract draft v1 (Part I only) built from the Cafune-based contract template on N:.
 - 2026-10-14: The user hand-edited v1. Claude reviewed it and saved v2 with the working-days fix.
